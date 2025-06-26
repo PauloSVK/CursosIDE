@@ -5,3 +5,4 @@ plotly
 scikit-learn
 llama-index
 llama_index.embeddings.ollama
+openpyxl
