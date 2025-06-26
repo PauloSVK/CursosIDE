@@ -3,4 +3,5 @@ pandas
 numpy
 plotly
 scikit-learn
-llama-index[ollama]
+llama-index
+llama_index.embeddings.ollama
