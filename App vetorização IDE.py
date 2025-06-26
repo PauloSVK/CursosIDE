@@ -9,8 +9,8 @@ import json
 
 # --- CONFIGURAÇÃO ---
 # URLs ou caminhos para os dados pré-calculados
-CURSOS_EMBEDDINGS_URL = r'C:\Users\paulo.knoblauch\OneDrive - FGV\Projeto análise de cursos IDE\vectors_nome_do_curso_nome.json'
-DISCIPLINAS_EMBEDDINGS_URL = r'C:\Users\paulo.knoblauch\OneDrive - FGV\Projeto análise de cursos IDE\vectors_nome_desc.json'
+CURSOS_EMBEDDINGS_URL = r'vectors_nome_do_curso_nome.json'
+DISCIPLINAS_EMBEDDINGS_URL = r'vectors_nome_desc.json'
 
 
 # --- FUNÇÕES DE CARREGAMENTO ---
@@ -22,10 +22,10 @@ def load_data():
     with open(DISCIPLINAS_EMBEDDINGS_URL) as f:
         vectors_disciplinas = json.load(f)
     embeddings_disciplinas = np.array(list(vectors_disciplinas.values()))
-    df_cursos = pd.read_excel(r'C:\Users\paulo.knoblauch\OneDrive - FGV\Projeto análise de cursos IDE\Cursos e disciplinas IDE completo.xlsx', sheet_name="Cursos")
-    df_disc = pd.read_excel(r'C:\Users\paulo.knoblauch\OneDrive - FGV\Projeto análise de cursos IDE\Cursos e disciplinas IDE completo.xlsx', sheet_name="Disciplinas")
-    meta_cursos_umap = pd.read_excel(r'C:\Users\paulo.knoblauch\OneDrive - FGV\Projeto análise de cursos IDE\meta_cursos_umap.xlsx')
-    meta_disciplinas_tsne = pd.read_excel(r'C:\Users\paulo.knoblauch\OneDrive - FGV\Projeto análise de cursos IDE\meta_disciplinas_tsne.xlsx')
+    df_cursos = pd.read_excel(r'Cursos e disciplinas IDE completo.xlsx', sheet_name="Cursos")
+    df_disc = pd.read_excel(r'Cursos e disciplinas IDE completo.xlsx', sheet_name="Disciplinas")
+    meta_cursos_umap = pd.read_excel(r'meta_cursos_umap.xlsx')
+    meta_disciplinas_tsne = pd.read_excel(r'meta_disciplinas_tsne.xlsx')
     return df_cursos, df_disc, embeddings_cursos, embeddings_disciplinas, meta_cursos_umap, meta_disciplinas_tsne
 
 # --- CARREGA RECURSOS ---
